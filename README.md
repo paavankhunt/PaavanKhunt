@@ -5,7 +5,7 @@
 </h2>
 
 <p align="center">
- <a href="https://github.com/thecodexhub"><img src="https://readme-typing-svg.herokuapp.com?color=%7149C6&width=700&size=22&center=true&lines=Full+Stack+Developer;Always+learning+and+exploring+new+things">
+ <a href="https://github.com/thecodexhub"><img src="https://readme-typing-svg.herokuapp.com?color=%FC2947&width=700&size=22&center=true&lines=Full+Stack+Developer;Always+learning+and+exploring+new+things">
  </a>
 </p>
 
@@ -41,5 +41,18 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+## 🔥 Streak stats
 
-![Paavan Khunt github stats](https://github-readme-stats.vercel.app/api?username=PaavanKhunt&show_icons=true&hide_border=true)
+<p align="center">
+ <a href="https://github.com/paavankhunt"><img src="http://github-readme-streak-stats.herokuapp.com?user=paavankhunt&theme=midnight-purple&date_format=M%20j%5B%2C%20Y%5D"></a>
+</p>
+
+## 📊 Github stats
+
+<br/>
+<p align="center">
+  <a href="https://github.com/anuraghazra/github-readme-stats"><img alt="paavankhunt's Github Stats" src="https://github-readme-stats.vercel.app/api?username=paavankhunt&count_private=true&show_icons=true&theme=midnight-purple" height="192px"/></a>
+  <a href="https://github.com/anuraghazra/github-readme-stats"><img alt="paavankhunt's Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=paavankhunt&langs_count=8&theme=midnight-purple&layout=compact" height="192px"/></a>
+ </p>
+<br/>
+
