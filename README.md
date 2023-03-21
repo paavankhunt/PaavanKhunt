@@ -5,7 +5,7 @@
 </h2>
 
 <p align="center">
- <a href="https://github.com/thecodexhub"><img src="https://readme-typing-svg.herokuapp.com?color=%FC2947&width=700&size=22&center=true&lines=Full+Stack+Developer;Always+learning+and+exploring+new+things">
+ <a href="https://github.com/thecodexhub"><img src="https://readme-typing-svg.herokuapp.com?color=%7E3ACD&width=700&size=22&center=true&lines=Full+Stack+Developer;Always+learning+and+exploring+new+things">
  </a>
 </p>
 
