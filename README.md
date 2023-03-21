@@ -70,7 +70,7 @@ I am Paavan Khunt. I am a Web and Mobile Application Developer from India. I am 
 <p>
 <a href="#"><img alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-7952B3.svg?logo=bootstrap&logoColor=white"></a>
 <a href="#"><img alt="Express.js" src="https://img.shields.io/badge/Express.js-404d59.svg?logo=express&logoColor=white"></a>
-<a href="#"><img alt="NextJS" src="https://img.shields.io/badge/NestJS-ff0044.svg?logo=nextjs&logoColor=white"></a>
+<a href="#"><img alt="NextJS" src="https://img.shields.io/badge/NextJS-ff0044.svg?logo=nextjs&logoColor=black"></a>
 <a href="#"><img alt="React" src="https://img.shields.io/badge/React-20232a.svg?logo=react&logoColor=%2361DAFB"></a>
 </p>
 
