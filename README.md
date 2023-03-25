@@ -47,6 +47,11 @@ I am Paavan Khunt. I am a Web and Mobile Application Developer from India. I am 
 <br/>
 <p align="center">
   <a href="https://github.com/anuraghazra/github-readme-stats"><img alt="paavankhunt's Github Stats" src="https://github-readme-stats.vercel.app/api?username=paavankhunt&count_private=true&show_icons=true&theme=midnight-purple" height="192px"/></a>
+ </p>
+<br/>
+
+<br/>
+<p align="center">
   <a href="https://github.com/anuraghazra/github-readme-stats"><img alt="paavankhunt's Top Languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=paavankhunt&langs_count=8&theme=midnight-purple&layout=compact" height="192px"/></a>
  </p>
 <br/>
