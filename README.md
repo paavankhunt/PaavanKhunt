@@ -10,10 +10,6 @@
 </p>
 
 
-<a href="https://www.linkedin.com/in/paavankhunt/">
-  <img align="left" alt="Paavan's LinkedIN" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />
-</a>
-
 ![](https://visitor-badge.glitch.me/badge?page_id=PaavanKhunt.PaavanKhunt)
 [![Github Follow](https://img.shields.io/github/followers/PaavanKhunt?label=follow&style=social)](https://github.com/PaavanKhunt)
 <br />
