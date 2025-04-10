@@ -22,7 +22,7 @@ I am Paavan Khunt. I am a Web and Mobile Application Developer from India. I am 
 
 
 - 🔭 I’m currently working on MERN Stack, React Native.
-- 🌱 I’m currently learning [Flutter](https://flutter.dev/), [Vue](https://vuejs.org/).
+- 🌱 I’m currently learning every new tech.
 - 🤔 I’m looking for help with the ideas of App development and Web3.
 - 😄 Pronouns: He/His/Him
 
