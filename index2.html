@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paavan Khunt - Digital Ecosystem Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Orbitron', 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Forest Background */
+        .forest-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -3;
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a2f1a 30%, #0f1f0f 100%);
+        }
+
+        /* Bioluminescent Trees */
+        .bio-trees {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            z-index: -2;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Cdefs%3E%3ClinearGradient id='tree1' x1='0%25' y1='100%25' x2='0%25' y2='0%25'%3E%3Cstop offset='0%25' stop-color='%23001a00'/%3E%3Cstop offset='50%25' stop-color='%2300ff41'/%3E%3Cstop offset='100%25' stop-color='%2300ff91'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M0,200 L50,50 L100,200 M100,200 L150,30 L200,200 M200,200 L250,70 L300,200 M300,200 L350,40 L400,200' stroke='url(%23tree1)' stroke-width='2' fill='none' opacity='0.6'/%3E%3C/svg%3E") repeat-x;
+            animation: sway 6s ease-in-out infinite;
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateX(0) scaleX(1); }
+            50% { transform: translateX(-10px) scaleX(1.02); }
+        }
+
+        /* Floating Bio-Particles */
+        .bio-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bio-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #00ff91, transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff91, 0 0 20px #00ff91, 0 0 30px #00ff91;
+            animation: bioFloat 15s infinite linear;
+        }
+
+        @keyframes bioFloat {
+            0% { 
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% { opacity: 1; transform: translateY(90vh) translateX(10px) scale(1); }
+            50% { transform: translateY(50vh) translateX(-20px) scale(1.2); }
+            90% { opacity: 1; transform: translateY(10vh) translateX(15px) scale(0.8); }
+            100% { 
+                transform: translateY(-10vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Digital Wildlife Elements */
+        .digital-wildlife {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .digital-bird {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            color: #00ff91;
+            font-size: 16px;
+            animation: flyAcross 20s infinite linear;
+        }
+
+        @keyframes flyAcross {
+            0% { 
+                transform: translateX(-100px) translateY(20vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            50% { 
+                transform: translateX(50vw) translateY(15vh) rotate(10deg);
+                opacity: 1;
+            }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateX(calc(100vw + 100px)) translateY(25vh) rotate(-5deg);
+                opacity: 0;
+            }
+        }
+
+        /* Neural Network Lines */
+        .neural-network {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .neural-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00ff41, transparent);
+            animation: neuralPulse 4s infinite ease-in-out;
+        }
+
+        @keyframes neuralPulse {
+            0%, 100% { opacity: 0.1; transform: scaleX(0.5); }
+            50% { opacity: 0.8; transform: scaleX(1); }
+        }
+
+        /* Navigation - Holographic Style */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            background: rgba(0, 20, 0, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid #00ff41;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            z-index: 1000;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00ff91;
+            text-shadow: 0 0 10px #00ff91;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: #00ff91;
+            text-shadow: 0 0 10px #00ff91;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff91;
+            box-shadow: 0 0 5px #00ff91;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Digital Ecosystem */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: #00ff91;
+            text-shadow: 0 0 20px #00ff91, 0 0 40px #00ff41;
+            font-family: 'Orbitron', monospace;
+            animation: glitchEffect 3s infinite;
+        }
+
+        @keyframes glitchEffect {
+            0%, 90%, 100% { transform: translateX(0); }
+            92% { transform: translateX(-2px); }
+            94% { transform: translateX(2px); }
+            96% { transform: translateX(-1px); }
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            margin-bottom: 2rem;
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ff41;
+            font-family: 'Orbitron', monospace;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .hero .description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 1.5s both;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border: 2px solid #00ff41;
+            border-radius: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: rgba(0, 255, 65, 0.1);
+            color: #00ff91;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border-color: #00ff91;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.5);
+            background: rgba(0, 255, 65, 0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #00ff91;
+            text-shadow: 0 0 20px #00ff91;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* About Section - Ecosystem Profile */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            padding: 2rem;
+            background: rgba(0, 40, 0, 0.3);
+            border: 1px solid #00ff41;
+            border-radius: 0;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+        }
+
+        .bio-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bio-skill-item {
+            background: rgba(0, 20, 0, 0.6);
+            border: 2px solid #00ff41;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bio-skill-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+            background: rgba(0, 255, 65, 0.1);
+        }
+
+        .bio-skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .bio-skill-item:hover::before {
+            left: 100%;
+        }
+
+        .bio-skill-item .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #00ff91;
+            text-shadow: 0 0 10px #00ff91;
+        }
+
+        /* Projects Section - Digital Habitats */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-habitat {
+            background: rgba(0, 20, 0, 0.4);
+            border: 2px solid #00ff41;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-habitat::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-habitat:hover::before {
+            opacity: 1;
+        }
+
+        .project-habitat:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 255, 65, 0.4);
+            border-color: #00ff91;
+        }
+
+        .project-habitat h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #00ff91;
+            text-shadow: 0 0 10px #00ff91;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+
+        .bio-tag {
+            background: rgba(0, 255, 65, 0.2);
+            border: 1px solid #00ff41;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            color: #00ff91;
+            font-family: 'Orbitron', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .bio-tag:hover {
+            background: rgba(0, 255, 65, 0.4);
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        /* Contact Section - Digital Communication Hub */
+        .contact-content {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0, 20, 0, 0.3);
+            border: 2px solid #00ff41;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 1.5rem;
+            border: 1px solid #00ff41;
+            background: rgba(0, 20, 0, 0.4);
+            font-family: 'Orbitron', monospace;
+        }
+
+        .contact-link:hover {
+            color: #00ff91;
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.6);
+            background: rgba(0, 255, 65, 0.1);
+        }
+
+        .contact-link .contact-icon {
+            font-size: 2rem;
+            color: #00ff91;
+            text-shadow: 0 0 10px #00ff91;
+        }
+
+        /* Footer - Ecosystem Status */
+        footer {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(0, 20, 0, 0.8);
+            border-top: 2px solid #00ff41;
+            color: #00ff91;
+            font-family: 'Orbitron', monospace;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .bio-skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Terminal Effect */
+        .terminal-text {
+            font-family: 'Courier New', monospace;
+            color: #00ff41;
+            text-shadow: 0 0 5px #00ff41;
+        }
+
+        /* Data Stream Effect */
+        .data-stream {
+            position: absolute;
+            top: 0;
+            right: 20px;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #00ff41, transparent);
+            animation: dataFlow 2s infinite ease-in-out;
+        }
+
+        @keyframes dataFlow {
+            0%, 100% { opacity: 0.3; transform: scaleY(0.5); }
+            50% { opacity: 1; transform: scaleY(1); }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="forest-bg"></div>
+    <div class="bio-trees"></div>
+    <div class="bio-particles"></div>
+    <div class="digital-wildlife"></div>
+    <div class="neural-network"></div>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo">PAAVAN.EXE</div>
+            <ul class="nav-links">
+                <li><a href="#home">INIT</a></li>
+                <li><a href="#about">PROFILE</a></li>
+                <li><a href="#projects">HABITATS</a></li>
+                <li><a href="#contact">CONNECT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>PAAVAN KHUNT</h1>
+            <div class="subtitle terminal-text">DIGITAL ECOSYSTEM ARCHITECT</div>
+            <p class="description">Merging the wild intelligence of nature with cutting-edge technology. I cultivate digital habitats where MERN Stack meets React Native, where Web3 evolves like species in a bioluminescent forest.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">EXPLORE HABITATS</a>
+                <a href="#contact" class="btn btn-secondary">ESTABLISH LINK</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="reveal">ECOSYSTEM PROFILE</h2>
+        <div class="about-content reveal">
+            <div class="about-text">
+                <p class="terminal-text">>> INITIALIZING BIO-DIGITAL PROFILE...</p>
+                <br>
+                <p>I am a hybrid entity - part developer, part digital naturalist. My code grows like living organisms, adapting and evolving through the MERN ecosystem. Each application I build forms a unique digital habitat where users can thrive.</p>
+                <br>
+                <p>My neural networks span across React forests and Node.js caves, while my mobile creatures roam the React Native wilderness. I'm currently exploring the quantum Web3 realm where blockchain meets bioluminescence.</p>
+                <br>
+                <p class="terminal-text">>> STATUS: ACTIVELY EVOLVING...</p>
+            </div>
+            <div class="bio-skills-grid">
+                <div class="bio-skill-item">
+                    <div class="skill-icon">⚛️</div>
+                    <div>REACT ORGANISM</div>
+                </div>
+                <div class="bio-skill-item">
+                    <div class="skill-icon">🌿</div>
+                    <div>NODE FOREST</div>
+                </div>
+                <div class="bio-skill-item">
+                    <div class="skill-icon">🧬</div>
+                    <div>MONGO DNA</div>
+                </div>
+                <div class="bio-skill-item">
+                    <div class="skill-icon">⚡</div>
+                    <div>JS LIGHTNING</div>
+                </div>
+                <div class="bio-skill-item">
+                    <div class="skill-icon">📱</div>
+                    <div>NATIVE SPECIES</div>
+                </div>
+                <div class="bio-skill-item">
+                    <div class="skill-icon">🚀</div>
+                    <div>EXPRESS FLIGHT</div>
+                </div>
+                <div class="bio-skill-item">
+                    <div class="skill-icon">🌐</div>
+                    <div>WEB3 QUANTUM</div>
+                </div>
+                <div class="bio-skill-item">
+                    <div class="skill-icon">🔬</div>
+                    <div>GIT EVOLUTION</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="reveal">DIGITAL HABITATS</h2>
+        <div class="projects-grid reveal">
+            <div class="project-habitat">
+                <div class="data-stream"></div>
+                <h3>E-COMMERCE ECOSYSTEM</h3>
+                <p class="terminal-text">>> HABITAT TYPE: COMMERCIAL BIOME</p>
+                <p>A thriving digital marketplace where transactions flow like nutrients through a neural network. Real-time inventory adapts like a living organism, while secure payment streams pulse through encrypted pathways.</p>
+                <div class="project-tags">
+                    <span class="bio-tag">REACT DNA</span>
+                    <span class="bio-tag">NODE NEURAL</span>
+                    <span class="bio-tag">MONGO HIVE</span>
+                    <span class="bio-tag">STRIPE PULSE</span>
+                </div>
+            </div>
+            <div class="project-habitat">
+                <div class="data-stream"></div>
+                <h3>SOCIAL WILDERNESS APP</h3>
+                <p class="terminal-text">>> HABITAT TYPE: MOBILE COLONY</p>
+                <p>A cross-platform digital ecosystem where users migrate seamlessly between devices. Real-time communication flows like bioluminescent signals through the night forest of social interaction.</p>
+                <div class="project-tags">
+                    <span class="bio-tag">NATIVE SPECIES</span>
+                    <span class="bio-tag">FIRE SYNC</span>
+                    <span class="bio-tag">REDUX MIND</span>
+                    <span class="bio-tag">SOCKET NERVE</span>
+                </div>
+            </div>
+            <div class="project-habitat">
+                <div class="data-stream"></div>
+                <h3>WEB3 QUANTUM FOREST</h3>
+                <p class="terminal-text">>> HABITAT TYPE: DEFI DIMENSION</p>
+                <p>A decentralized financial ecosystem where crypto portfolios evolve like digital organisms. DeFi protocols branch out like neural pathways, connecting through quantum blockchain networks.</p>
+                <div class="project-tags">
+                    <span class="bio-tag">WEB3 QUANTUM</span>
+                    <span class="bio-tag">ETH CRYSTAL</span>
+                    <span class="bio-tag">SOLIDITY CODE</span>
+                    <span class="bio-tag">META PORTAL</span>
+                </div>
+            </div>
+            <div class="project-habitat">
+                <div class="data-stream"></div>
+                <h3>TASK NEURAL NETWORK</h3>
+                <p class="terminal-text">>> HABITAT TYPE: COLLABORATIVE HIVE</p>
+                <p>A collective intelligence system where project management evolves through team collaboration. Real-time synapses fire data across the network, creating emergent productivity patterns.</p>
+                <div class="project-tags">
+                    <span class="bio-tag">MERN FUSION</span>
+                    <span class="bio-tag">SOCKET SYNC</span>
+                    <span class="bio-tag">CHART VISION</span>
+                    <span class="bio-tag">JWT GUARD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="reveal">ESTABLISH CONNECTION</h2>
+        <div class="contact-content reveal">
+            <p class="terminal-text">>> INITIATING COMMUNICATION PROTOCOLS...</p>
+            <br>
+            <p>Ready to collaborate on projects that push the boundaries between digital and natural worlds? Let's create ecosystems that evolve, adapt, and inspire.</p>
+            <div class="contact-links">
+                <a href="https://github.com/paavankhunt" class="contact-link" target="_blank">
+                    <div class="contact-icon">🧬</div>
+                    <span>CODE GENOME</span>
+                </a>
+                <a href="https://linkedin.com/in/paavankhunt" class="contact-link" target="_blank">
+                    <div class="contact-icon">🌐</div>
+                    <span>NEURAL LINK</span>
+                </a>
+                <a href="mailto:paavan@example.com" class="contact-link">
+                    <div class="contact-icon">📡</div>
+                    <span>DATA STREAM</span>
+                </a>
+                <a href="https://twitter.com/paavankhunt" class="contact-link" target="_blank">
+                    <div class="contact-icon">🦅</div>
+                    <span>SIGNAL FLIGHT</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="terminal-text">>> ECOSYSTEM STATUS: ACTIVE | EVOLUTION: CONTINUOUS | PAAVAN.EXE © 2025</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // Create bioluminescent particles
+        function createBioParticles() {
+            const particlesContainer = document.querySelector('.bio-particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'bio-particle';
+                
+                const size = Math.random() * 6 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                
+                // Random glow colors
+                const glowColors = ['#00ff91', '#00ff41', '#40e0d0', '#00ffff'];
+                const color = glowColors[Math.floor(Math.random() * glowColors.length)];
+                particle.style.background = `radial-gradient(circle, ${color}, transparent)`;
+                particle.style.boxShadow = `0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Create digital wildlife
+        function createDigitalWildlife() {
+            const wildlifeContainer = document.querySelector('.digital-wildlife');
+            const wildlifeSymbols = ['🦋', '🐦', '🦅', '🦜', '🐛', '🦗', '🕷️', '🦎'];
+            
+            setInterval(() => {
+                const bird = document.createElement('div');
+                bird.className = 'digital-bird';
+                bird.innerHTML = wildlifeSymbols[Math.floor(Math.random() * wildlifeSymbols.length)];
+                
+                bird.style.top = Math.random() * 40 + '%';
+                bird.style.animationDuration = (Math.random() * 15 + 20) + 's';
+                bird.style.color = Math.random() > 0.5 ? '#00ff91' : '#00ff41';
+                
+                wildlifeContainer.appendChild(bird);
+                
+                // Remove after animation
+                setTimeout(() => {
+                    if (bird.parentNode) {
+                        bird.parentNode.removeChild(bird);
+                    }
+                }, 25000);
+            }, 8000);
+        }
+
+        // Create neural network lines
+        function createNeuralNetwork() {
+            const networkContainer = document.querySelector('.neural-network');
+            const lineCount = 12;
+
+            for (let i = 0; i < lineCount; i++) {
+                const line = document.createElement('div');
+                line.className = 'neural-line';
+                
+                const width = Math.random() * 300 + 100;
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                
+                line.style.width = width + 'px';
+                line.style.top = top + '%';
+                line.style.left = left + '%';
+                line.style.animationDelay = Math.random() * 4 + 's';
+                line.style.transform = `rotate(${Math.random() * 360}deg)`;
+                
+                networkContainer.appendChild(line);
+            }
+        }
+
+        // Terminal typing effect
+        function terminalType(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    // Add blinking cursor
+                    element.innerHTML += '<span style="animation: blink 1s infinite;">_</span>';
+                }
+            }
+            type();
+        }
+
+        // Glitch text effect
+        function glitchText(element) {
+            const originalText = element.textContent;
+            const glitchChars = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+            
+            setInterval(() => {
+                if (Math.random() < 0.1) { // 10% chance to glitch
+                    let glitchedText = '';
+                    for (let i = 0; i < originalText.length; i++) {
+                        if (Math.random() < 0.1) {
+                            glitchedText += glitchChars[Math.floor(Math.random() * glitchChars.length)];
+                        } else {
+                            glitchedText += originalText[i];
+                        }
+                    }
+                    element.textContent = glitchedText;
+                    
+                    setTimeout(() => {
+                        element.textContent = originalText;
+                    }, 100);
+                }
+            }, 3000);
+        }
+
+        // Initialize all effects
+        window.addEventListener('load', () => {
+            createBioParticles();
+            createDigitalWildlife();
+            createNeuralNetwork();
+            
+            // Add CSS for blinking cursor
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes blink {
+                    0%, 50% { opacity: 1; }
+                    51%, 100% { opacity: 0; }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Apply glitch effect to main title
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                glitchText(heroTitle);
+            }
+            
+            // Terminal typing for subtitle
+            setTimeout(() => {
+                const subtitle = document.querySelector('.hero .subtitle');
+                if (subtitle) {
+                    terminalType(subtitle, 'DIGITAL ECOSYSTEM ARCHITECT', 80);
+                }
+            }, 2000);
+        });
+
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            const scrolled = window.scrollY > 100;
+            
+            if (scrolled) {
+                nav.style.background = 'rgba(0, 20, 0, 0.95)';
+                nav.style.boxShadow = '0 0 30px rgba(0, 255, 65, 0.5)';
+            } else {
+                nav.style.background = 'rgba(0, 20, 0, 0.9)';
+                nav.style.boxShadow = '0 0 20px rgba(0, 255, 65, 0.3)';
+            }
+        });
+
+        // Interactive project cards
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-habitat');
+            
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    // Add pulsing effect
+                    card.style.animation = 'pulse 1.5s infinite';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.animation = '';
+                });
+            });
+            
+            // Add pulse animation
+            const pulseStyle = document.createElement('style');
+            pulseStyle.textContent = `
+                @keyframes pulse {
+                    0% { box-shadow: 0 0 0 0 rgba(0, 255, 65, 0.4); }
+                    70% { box-shadow: 0 0 0 20px rgba(0, 255, 65, 0); }
+                    100% { box-shadow: 0 0 0 0 rgba(0, 255, 65, 0); }
+                }
+            `;
+            document.head.appendChild(pulseStyle);
+        });
+
+        // Bio-skill items interaction
+        document.addEventListener('DOMContentLoaded', () => {
+            const skillItems = document.querySelectorAll('.bio-skill-item');
+            
+            skillItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Create ripple effect
+                    const ripple = document.createElement('div');
+                    ripple.style.position = 'absolute';
+                    ripple.style.borderRadius = '50%';
+                    ripple.style.background = 'rgba(0, 255, 65, 0.6)';
+                    ripple.style.transform = 'scale(0)';
+                    ripple.style.animation = 'ripple 0.6s linear';
+                    ripple.style.left = '50%';
+                    ripple.style.top = '50%';
+                    ripple.style.width = '20px';
+                    ripple.style.height = '20px';
+                    ripple.style.marginLeft = '-10px';
+                    ripple.style.marginTop = '-10px';
+                    
+                    item.style.position = 'relative';
+                    item.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+            
+            // Add ripple animation
+            const rippleStyle = document.createElement('style');
+            rippleStyle.textContent = `
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(rippleStyle);
+        });
+
+        // Matrix-style data rain effect (subtle)
+        function createDataRain() {
+            const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.style.position = 'fixed';
+            canvas.style.top = '0';
+            canvas.style.left = '0';
+            canvas.style.zIndex = '-2';
+            canvas.style.opacity = '0.1';
+            canvas.style.pointerEvents = 'none';
+            
+            document.body.appendChild(canvas);
+            
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            
+            resize();
+            window.addEventListener('resize', resize);
+            
+            const drops = [];
+            const fontSize = 14;
+            const columns = Math.floor(canvas.width / fontSize);
+            
+            for (let i = 0; i < columns; i++) {
+                drops[i] = Math.random() * canvas.height;
+            }
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff41';
+                ctx.font = fontSize + 'px monospace';
+                
+                for (let i = 0; i < drops.length; i++) {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i * fontSize, drops[i]);
+                    
+                    if (drops[i] > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i] += fontSize;
+                }
+            }
+            
+            setInterval(draw, 100);
+        }
+        
+        // Initialize matrix rain with delay
+        setTimeout(createDataRain, 3000);
+    </script>
+</body>
+</html>
